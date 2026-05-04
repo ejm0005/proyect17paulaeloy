@@ -11,11 +11,11 @@ class UserSession {
 public class LoginPage {
 
     private WebDriver driver;
-    //2 VERY LONG NAME
-    private By personwhowantsloginintothepage = By.id("user-name");
-    private By thatPasswordIsCorrect = By.id("password");
-    private By thisIsALoginButton = By.id("login-button");
-    private By thisIsAErrorMessage = By.cssSelector("[data-test='error']");
+    // These attributes indicate the elements on the page
+    private By userField = By.id("user-name");
+    private By passField = By.id("password");
+    private By loginButton = By.id("login-button");
+    private By errorMessage = By.cssSelector("[data-test='error']");
 
     public LoginPage(WebDriver driver) {
 
@@ -24,26 +24,26 @@ public class LoginPage {
 
     // 3 DISPENSABLE: Duplicate Code (start)
     public void writeUser(String user){
-        driver.findElement(personwhowantsloginintothepage).sendKeys(user);
+        driver.findElement(userField).sendKeys(user);
     }
     public void writeUser2(String user){
-        driver.findElement(personwhowantsloginintothepage).sendKeys(user);
+        driver.findElement(userField).sendKeys(user);
     }
     // DISPENSABLE: Duplicate Code (end)
 
     // 4 DISPENSABLE: Duplicate Code (start)
     public void writePassword(String password){
-        driver.findElement(thatPasswordIsCorrect).sendKeys(password);
-        driver.findElement(thatPasswordIsCorrect).sendKeys(password);
+        driver.findElement(passField).sendKeys(password);
+        driver.findElement(passField).sendKeys(password);
     }
     // DISPENSABLE: Duplicate Code (end)
 
     // 5 DISPENSABLE: Duplicate Code (start)
     public void clickLogin(){
-        driver.findElement(thisIsALoginButton).click();// duplicate
+        driver.findElement(loginButton).click();// duplicate
     }
     public void clickLogin2(){
-        driver.findElement(thisIsALoginButton).click();// duplicate
+        driver.findElement(loginButton).click();// duplicate
     }
     // DISPENSABLE: Duplicate Code (start)
 
@@ -69,8 +69,8 @@ public class LoginPage {
         // DISPENSABLE: Dead Code (end)
 
         // 10 CHANGE PREVENTER: Shotgun Surgery (simulate)
-        driver.findElement(personwhowantsloginintothepage).clear();
-        driver.findElement(thatPasswordIsCorrect).clear();
+        driver.findElement(userField).clear();
+        driver.findElement(passField).clear();
         // If this changes, it will have to be updated in many places
 
         saveLog();
@@ -79,7 +79,7 @@ public class LoginPage {
     // It does too many things in a single method
 
     public boolean errorMessage(){
-        return driver.findElement(thisIsAErrorMessage).isDisplayed();
+        return driver.findElement(errorMessage).isDisplayed();
     }
 
     // 11 Unnecessary method added
