@@ -9,10 +9,6 @@ class UserSession {
     public String getUsername() { return username; }
 }
 public class LoginPage {
-    // 1 DISPENSABLE: Dead Code (start)
-    private String temp;
-    // unused variables
-    // DISPENSABLE: Dead Code (end)
 
     private WebDriver driver;
     //2 VERY LONG NAME
@@ -86,17 +82,18 @@ public class LoginPage {
         return driver.findElement(thisIsAErrorMessage).isDisplayed();
     }
 
-    // 10 Unnecessary method added
+    // 11 Unnecessary method added
     public void saveLog(){
         System.out.println("Login");
     }
-    // 11 COUPLERS: Feature Envy (start)
+
+    // 12 COUPLERS: Feature Envy (start)
     public boolean validateUserFormat(UserSession session) {
         return session.username.contains("@") && session.username.length() > 5 && !session.username.isEmpty();
     }
     // COUPLERS: Feature Envy (end)
 
-    // 12 COUPLERS: Inappropriate Intimacy (start)
+    // 13 COUPLERS: Inappropriate Intimacy (start)
     public void hackSessionToken(UserSession session) {
         System.out.println("Accessing data I'm not authorized to see: " + session.username);
     }
