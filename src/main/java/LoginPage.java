@@ -38,25 +38,19 @@ public class LoginPage {
     }
 
 
-    // 6 + 7 BLOATERS: Long Method (start) + CHANGE PREVENTER: Divergent Change (start)
+    //This method requires you to enter your login details
     public void login(String user, String password){
         writeUser(user); //Enter user
         writePassword(password); //Enter password
         clickLogin(); //Click the button Login
 
-        saveLog();
     }
-    // BLOATERS: Long Method (end) + CHANGE PREVENTER: Divergent Change (end)
-    // It does too many things in a single method
 
     public boolean errorMessage(){
         return driver.findElement(errorMessage).isDisplayed();
+
     }
 
-    // 11 Unnecessary method added
-    public void saveLog(){
-        System.out.println("Login");
-    }
 
     // 12 COUPLERS: Feature Envy (start)
     public boolean validateUserFormat(UserSession session) {
