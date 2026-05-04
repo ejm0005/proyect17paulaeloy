@@ -52,13 +52,6 @@ public class LoginPage {
         writePassword(password);
         clickLogin();
 
-        // 9 DISPENSABLE: Dead Code (start)
-        int a = 5;
-        int b = 10;
-        int c = a + b;
-        // unused variables
-        // DISPENSABLE: Dead Code (end)
-
         // 10 CHANGE PREVENTER: Shotgun Surgery (simulate)
         driver.findElement(userField).clear();
         driver.findElement(passField).clear();
