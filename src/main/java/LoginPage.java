@@ -1,13 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-// Class for Couplers
-class UserSession {
-    public String username;
-    private String _internalToken = "SECRET_123";
-
-    public String getUsername() { return username; }
-}
 public class LoginPage {
 
     private WebDriver driver;
@@ -51,8 +44,4 @@ public class LoginPage {
         return driver.findElement(errorMessage).isDisplayed();
     }
 
-    // 13 COUPLERS: Inappropriate Intimacy (start)
-    public void hackSessionToken(UserSession session) {
-        System.out.println("Accessing data I'm not authorized to see: " + session.username);
-    }
 }
