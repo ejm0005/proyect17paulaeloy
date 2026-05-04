@@ -44,11 +44,6 @@ public class LoginPage {
         writePassword(password); //Enter password
         clickLogin(); //Click the button Login
 
-        // 10 CHANGE PREVENTER: Shotgun Surgery (simulate)
-        driver.findElement(userField).clear();
-        driver.findElement(passField).clear();
-        // If this changes, it will have to be updated in many places
-
         saveLog();
     }
     // BLOATERS: Long Method (end) + CHANGE PREVENTER: Divergent Change (end)
