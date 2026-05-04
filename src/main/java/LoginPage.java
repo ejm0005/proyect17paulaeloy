@@ -27,12 +27,10 @@ public class LoginPage {
         driver.findElement(userField).sendKeys(user);
     }
 
-    // 4 DISPENSABLE: Duplicate Code (start)
+    //This is so you can enter the password in the appropriate field
     public void writePassword(String password){
         driver.findElement(passField).sendKeys(password);
-        driver.findElement(passField).sendKeys(password);
     }
-    // DISPENSABLE: Duplicate Code (end)
 
     // 5 DISPENSABLE: Duplicate Code (start)
     public void clickLogin(){
