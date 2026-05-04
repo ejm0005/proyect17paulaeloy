@@ -22,14 +22,10 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    // 3 DISPENSABLE: Duplicate Code (start)
+    //This is so you can enter your username in the appropriate field
     public void writeUser(String user){
         driver.findElement(userField).sendKeys(user);
     }
-    public void writeUser2(String user){
-        driver.findElement(userField).sendKeys(user);
-    }
-    // DISPENSABLE: Duplicate Code (end)
 
     // 4 DISPENSABLE: Duplicate Code (start)
     public void writePassword(String password){
