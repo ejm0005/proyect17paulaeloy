@@ -32,14 +32,11 @@ public class LoginPage {
         driver.findElement(passField).sendKeys(password);
     }
 
-    // 5 DISPENSABLE: Duplicate Code (start)
+    //To be able to click the login button
     public void clickLogin(){
         driver.findElement(loginButton).click();// duplicate
     }
-    public void clickLogin2(){
-        driver.findElement(loginButton).click();// duplicate
-    }
-    // DISPENSABLE: Duplicate Code (start)
+
 
     // 6 + 7 BLOATERS: Long Method (start) + CHANGE PREVENTER: Divergent Change (start)
     public void login(String user, String password){
