@@ -41,11 +41,37 @@ public class LoginPageTest {
 
     //Test for successful login
     @Test
-    void loginCorrecto(){
+    void loginCorrect(){
         //Log in using the credentials that have been validated
         loginPage.login("standard_user", "secret_sauce");
 
         //Check that the URL contains 'inventory'
         assertTrue(driver.getCurrentUrl().contains("inventory"));
+    }
+    //Test for incorrect login
+    @Test
+    void loginIncorrect(){
+        //Log in using the credentials that haven't been validated
+        loginPage.login("standard-user", "incorrect-password");
+
+        //Check that the error appears
+        assertTrue(loginPage.errorMessage(),
+                "The password is incorrect");
+    }
+    //Test shows error
+    @Test
+    void loginIncorrect2() {
+
+        LoginPage loginPage = new LoginPage(driver);
+
+        loginPage.login("standard_user", "clave_incorrecta");
+
+        loginPage.clickLogin();
+
+        assertTrue(loginPage.errorMessage(),
+                "An error message must appear");
+
+        assertTrue(loginPage.obtainErrorMessage().contains("Username and password do not match"),
+                "This message is not expected");
     }
 }

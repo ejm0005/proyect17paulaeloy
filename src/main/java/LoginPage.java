@@ -10,8 +10,8 @@ public class LoginPage {
     private By loginButton = By.id("login-button");
     private By errorMessage = By.cssSelector("[data-test='error']");
 
+    //This identifies the web browser
     public LoginPage(WebDriver driver) {
-
         this.driver = driver;
     }
 
@@ -30,7 +30,6 @@ public class LoginPage {
         driver.findElement(loginButton).click();// duplicate
     }
 
-
     //This method requires you to enter your login details
     public void login(String user, String password){
         writeUser(user); //Enter user
@@ -42,6 +41,14 @@ public class LoginPage {
     //This shows to the user an error message
     public boolean errorMessage(){
         return driver.findElement(errorMessage).isDisplayed();
+    }
+
+    //This extract the error message content
+    public String obtainErrorMessage() {
+        if (errorMessage()) {
+            return driver.findElement(errorMessage).getText();
+        }
+        return "";
     }
 
 }
