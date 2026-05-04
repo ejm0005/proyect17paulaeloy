@@ -1,8 +1,11 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LoginPageTest {
     //This represents the browser
@@ -34,5 +37,15 @@ public class LoginPageTest {
         if (driver != null) {
             driver.quit();
         }
+    }
+
+    //Test for successful login
+    @Test
+    void loginCorrecto(){
+        //Log in using the credentials that have been validated
+        loginPage.login("standard_user", "secret_sauce");
+
+        //Check that the URL contains 'inventory'
+        assertTrue(driver.getCurrentUrl().contains("inventory"));
     }
 }
