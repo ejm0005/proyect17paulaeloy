@@ -46,17 +46,10 @@ public class LoginPage {
 
     }
 
+    //This shows to the user an error message
     public boolean errorMessage(){
         return driver.findElement(errorMessage).isDisplayed();
-
     }
-
-
-    // 12 COUPLERS: Feature Envy (start)
-    public boolean validateUserFormat(UserSession session) {
-        return session.username.contains("@") && session.username.length() > 5 && !session.username.isEmpty();
-    }
-    // COUPLERS: Feature Envy (end)
 
     // 13 COUPLERS: Inappropriate Intimacy (start)
     public void hackSessionToken(UserSession session) {
