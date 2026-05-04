@@ -40,17 +40,9 @@ public class LoginPage {
 
     // 6 + 7 BLOATERS: Long Method (start) + CHANGE PREVENTER: Divergent Change (start)
     public void login(String user, String password){
-
-        // 8 OBJECT-ORIENTATION ABUSER: Switch (start)
-        if(user.equals("user")){
-            writeUser("user");
-            writePassword("1234");
-        }
-        // OBJECT-ORIENTATION ABUSER: Switch (end)
-
-        writeUser(user);
-        writePassword(password);
-        clickLogin();
+        writeUser(user); //Enter user
+        writePassword(password); //Enter password
+        clickLogin(); //Click the button Login
 
         // 10 CHANGE PREVENTER: Shotgun Surgery (simulate)
         driver.findElement(userField).clear();
