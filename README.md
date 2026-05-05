@@ -65,7 +65,7 @@ Object-Orientation abusers is a type of code smell that occurs when the principl
 Solution:  We remove misplaced code
 
 ### 5. Couplers
-Couplers are a category of code smells that indicate an excesive coupling between classes or modules, thereby violating the principles of object-oriented design
+Couplers are a category of code smells that indicate an excessive coupling between classes or modules, thereby violating the principles of object-oriented design
 - Feature Envy: A method uses data from another object rather than its own.
-- Inappropiate Intimacy: One class uses the private fields or methods of another class.<br><br>
+- InappropRiate Intimacy: One class uses the private fields or methods of another class.<br><br>
 Solution: We removed those methods because they weren’t necessary for our type of application (a simple login that collects data but doesn’t perform any checks itself).
