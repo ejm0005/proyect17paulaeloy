@@ -16,7 +16,7 @@ This project contains a suite of automated tests to validate the login functiona
 ## Structure:
 The project is structured into two main components following the POM pattern:
 - LoginPage.java: This is the Page Object. It contains the web element selectors (username, password, login button) and the methods to interact with the page. It's located in /src/main/java/LoginPage.java
-- LoginPageTest.java: Contiene los casos de prueba (scripts). Se encarga de la lógica de negocio de las pruebas, como la configuración del driver (@BeforeEach) y la limpieza del entorno (@AfterEach). It's located in /src/main/test/LoginPageTest.java
+- LoginPageTest.java: Contains the test cases (scripts). It handles the business logic of the tests, such as driver configuration (@BeforeEach) and environment clean-up (@AfterEach). It's located in /src/main/test/LoginPageTest.java
 
 ## Tests included:
 - loginCorrect: Login with valid credentials and verify that the user is redirected to the inventory page.
