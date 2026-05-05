@@ -1,5 +1,6 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -46,7 +47,7 @@ public class LoginPageTest {
         loginPage.login("standard_user", "secret_sauce");
 
         //Check that the URL contains 'inventory'
-        assertTrue(driver.getCurrentUrl().contains("inventory"));
+        Assertions.assertTrue(driver.getCurrentUrl().contains("inventory"));
     }
     //Test for incorrect login
     @Test
@@ -55,7 +56,7 @@ public class LoginPageTest {
         loginPage.login("standard-user", "incorrect-password");
 
         //Check that the error appears
-        assertTrue(loginPage.errorMessage(),
+        Assertions.assertTrue(loginPage.errorMessage(),
                 "The password is incorrect");
     }
     //Test shows error
@@ -68,10 +69,10 @@ public class LoginPageTest {
 
         loginPage.clickLogin();
 
-        assertTrue(loginPage.errorMessage(),
+        Assertions.assertTrue(loginPage.errorMessage(),
                 "An error message must appear");
 
-        assertTrue(loginPage.obtainErrorMessage().contains("Username and password do not match"),
+        Assertions.assertTrue(loginPage.obtainErrorMessage().contains("Username and password do not match"),
                 "This message is not expected");
     }
 }
